@@ -35,8 +35,8 @@ def memo_ids(memo_id):
         memodata = str(request.json['memodata'])
 
         memo = Memo()
-        memo.create(memodata)
-        return jsonify({'message': 'created'})
+        memo.update(memo_id, memodata)
+        return jsonify({'message': 'updated'})
 
 
 if __name__ == '__main__':

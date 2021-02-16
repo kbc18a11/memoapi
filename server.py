@@ -38,6 +38,12 @@ def memo_ids(memo_id):
         memo.update(memo_id, memodata)
         return jsonify({'message': 'updated'})
 
+    if request.method == 'DELETE':
+        memo = Memo()
+        memo.delete(memo_id)
+
+        return jsonify({'message': 'deleted'})
+
 
 if __name__ == '__main__':
     app.run()
